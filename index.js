@@ -7,6 +7,7 @@ http.request = function (params, cb) {
     if (typeof params === 'string') {
         params = url.parse(params)
     }
+	
     if (!params) params = {};
     if (!params.host && !params.port) {
         params.port = parseInt(window.location.port, 10);
@@ -15,7 +16,8 @@ http.request = function (params, cb) {
         params.host = params.hostname;
     }
     
-    if (!params.scheme) params.scheme = window.location.protocol.split(':')[0];
+    if (!params.scheme) params.scheme = params.protocol.split(':')[0];
+	
     if (!params.host) {
         params.host = window.location.hostname || window.location.host;
     }
