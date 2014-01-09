@@ -42,8 +42,8 @@ var req = http.request(options, cb)
 * method
 * path
 * headers={}, as an object mapping key names to string or Array values
-* host=window.location.host
-* port=window.location.port
+* host
+* port
 
 The callback will be called with the response object.
 
